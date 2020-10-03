@@ -99,3 +99,5 @@ const checkedString = localStorage.getItem('bongo.checked') ?? '0'.repeat(24)
 let checked = checkedString.split('').map(c => c !== '0')
 
 initGrid()
+
+// thanks to misode for original code
