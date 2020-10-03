@@ -1,42 +1,44 @@
+// Add essential goals here (10 or more)
+
 const essentialGoals = [
-  'Fletching table use',
-  'A Minecraft related song',
-  'History lesson (again)',
-  'Fake laughing',
-  'New new combat update',
-  'Cave update',
-  'Board game talk',
-  'Animated villagers',
-  'Someone asks if there are capes',
-  'Colab with other brand',
+  'Essential goal 1',
+  'Essential goal 2',
+  'Essential goal 3',
+  'Essential goal 4',
+  'Essential goal 5',
+  'Essential goal 6',
+  'Essential goal 7',
+  'Essential goal 8',
+  'Essential goal 9',
+  'Essential goal 10',
 ]
 
+// Add optional goals here (15 or more)
+
 const optionalGoals = [
-  '"We apologize for the inconvenience this year..."',
-  '"We\'re all in this together"',
-  '"Stay safe!"',
-  '"In these hard / troublesome times..."',
-  'NO mention of the word "corona" within 30 minutes',
-  'Marketplace victory lap',
-  'Non-Mojang creators webcam montage',
-  '*awkward silence*',
-  'People playing on their phone center-stage',
-  'New Dungeons DLC',
-  'A joke about masks',
-  'Subtle Minecraft merch mention',
-  'Dab from staff',
-  'Among Us reference',
-  'Fake audience',
-  'Big Bedrock map',
-  'Lights go out, unplanned',
-  'Someone on camera not being "supposed to"',
+  'Optional goal 1',
+  'Optional goal 2',
+  'Optional goal 3',
+  'Optional goal 3',
+  'Optional goal 4',
+  'Optional goal 5',
+  'Optional goal 6',
+  'Optional goal 7',
+  'Optional goal 8',
+  'Optional goal 9',
+  'Optional goal 10',
+  'Optional goal 11',
+  'Optional goal 12',
+  'Optional goal 13',
+  'Optional goal 14',
+  'Optional goal 15',
 ]
 
 function generateSeed(length = 12) {
   var arr = new Uint8Array(length / 2)
   window.crypto.getRandomValues(arr)
   const seed = Array.from(arr, d => ('0' + d.toString(16)).substr(-2)).join('')
-  localStorage.setItem('minecraftlive.seed', seed)
+  localStorage.setItem('bongo.seed', seed)
   return seed
 }
 
@@ -64,7 +66,7 @@ function initGrid() {
       row.appendChild(cell)
       if (i === 12) {
         cell.className = 'cell free-space'
-        cell.innerHTML = 'Jeb is awkward'
+        cell.innerHTML = 'Free space text' // Add free space text here
         continue;
       } else if (i > 12) {
         i -= 1;
@@ -81,7 +83,7 @@ function initGrid() {
 }
 
 function setChecked() {
-  localStorage.setItem('minecraftlive.checked', checked.map(e => e ? '1' : '0').join(''))
+  localStorage.setItem('bongo.checked', checked.map(e => e ? '1' : '0').join(''))
 }
 
 document.querySelector('.new-seed').addEventListener('click', () => {
@@ -91,9 +93,9 @@ document.querySelector('.new-seed').addEventListener('click', () => {
   initGrid()
 })
 
-Math.seedrandom(localStorage.getItem('minecraftlive.seed') ?? generateSeed())
+Math.seedrandom(localStorage.getItem('bongo.seed') ?? generateSeed())
 
-const checkedString = localStorage.getItem('minecraftlive.checked') ?? '0'.repeat(24)
+const checkedString = localStorage.getItem('bongo.checked') ?? '0'.repeat(24)
 let checked = checkedString.split('').map(c => c !== '0')
 
 initGrid()
