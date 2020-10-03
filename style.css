@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
   background: url('./assets/background.png') no-repeat center center fixed, #7CA8FF;
   background-size: cover;
-  font-family: 'seven', sans-serif;
+  font-family: 'OpenDyslexic2', sans-serif;
   font-size: 110%;
   letter-spacing: 1px;
 }
@@ -144,8 +144,8 @@ button:hover::after,
 }
 
 @font-face {
-	font-family: seven;
-	src: url('assets/seven.ttf');
+	font-family: OpenDyslexic2;
+	src: url('assets/OpenDyslexic-Regular.otf');
 }
 
 @media screen and (max-width: 860px) {
