@@ -13,7 +13,7 @@ body {
   min-width: 300px;
   height: 100vh;
   overflow-x: hidden;
-  background: url('./assets/background.png') no-repeat center center fixed, #7CA8FF;
+  background: url('./assets/background.png') no-repeat center center fixed, grey;
   background-size: cover;
   font-family: 'OpenDyslexic2', sans-serif;
   font-size: 110%;
@@ -46,15 +46,16 @@ button {
   display: block;
   position: relative;
   padding: 7px;
-  background: url('./assets/button.png') no-repeat;
-  background-size: cover;
-  image-rendering: pixelated;
   letter-spacing: inherit;
   font: inherit;
   color: #fff;
   border: 2px solid #000;
   outline: none;
   cursor: pointer;
+}
+
+.new-seed {
+  color: black;
 }
 
 .grid-header span {
@@ -85,7 +86,7 @@ button {
   height: 13vw;
   max-height: 150px;
   padding: 10px;
-  background: url('./assets/cell.png') no-repeat center center, #2C2C2C;
+  background: url('./assets/cell.png') no-repeat center center, grey;
   background-size: cover;
   image-rendering: crisp-edges;
   image-rendering: pixelated;
@@ -97,12 +98,12 @@ button {
 
 .cell.checked {
   background-image: url('./assets/cell_checked.png');
-  color: #bbb;
+  color: #white;
 }
 
 .cell.free-space {
   background-image: url('./assets/cell_checked.png');
-  color: #d0ff79;
+  color: white;
   cursor: default;
 }
 
@@ -111,7 +112,7 @@ button {
 }
 
 .cell.free-space::before {
-  content: 'FREE SPACE';
+  content: 'FREE SPACE!';
   margin-bottom: 1em;
 }
 

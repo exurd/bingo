@@ -75,12 +75,6 @@ function initGrid() {
         checked[i] = !checked[i]
         cell.className = checked[i] ? 'cell checked' : 'cell'
         setChecked()
-        ga('send', 'event', 'Grid', 'toggle-cell', shuffledGoals[i])
-        if (checked[i]) {
-          ga('send', 'event', 'Grid', 'check-cell', shuffledGoals[i])
-        } else {
-          ga('send', 'event', 'Grid', 'uncheck-cell', shuffledGoals[i])
-        }
       })
     }
   }
@@ -88,14 +82,12 @@ function initGrid() {
 
 function setChecked() {
   localStorage.setItem('minecraftlive.checked', checked.map(e => e ? '1' : '0').join(''))
-  ga('set', 'metric1', checked.filter(e => e).length)
 }
 
 document.querySelector('.new-seed').addEventListener('click', () => {
   Math.seedrandom(generateSeed())
   checked = new Array(24).fill(false)
   setChecked()
-  ga('send', 'event', 'Grid', 'reset')
   initGrid()
 })
 
